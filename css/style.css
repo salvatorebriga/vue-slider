@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+[v-cloak] {
+  display: none;
+}
+
 .container {
   width: 900px;
   height: 100vh;
@@ -86,6 +90,10 @@
 
 .next {
   bottom: 0;
+}
+
+.prev {
+  top: 0;
 }
 
 .prev::after {

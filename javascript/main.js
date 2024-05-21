@@ -51,5 +51,10 @@ createApp({
         this.currentIndex = this.images.length - 1;
       }
     },
+
+    thumbClick(index) {
+      console.log(index);
+      this.currentIndex = index;
+    },
   },
 }).mount("#app");
