@@ -4,16 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carosello Vue</title>
     <link rel="stylesheet" href="css/style.css" />
+    <title>Carosello Vue</title>
   </head>
   <body>
     <div id="app">
       <div class="container">
-        <div class="items"></div>
+        <div class="items">
+          <div
+            class="item"
+            v-for="(item,index) in images"
+            :key="index"
+            v-show="index === currentIndex"
+          >
+            <img :src="item.image" :alt="item.title" />
+          </div>
+        </div>
         <div class="thumbs">
-          <div class="prev"></div>
-          <div class="next"></div>
+          <div class="prev" @click="prevClick"></div>
+          <div class="next" @click="nextClick"></div>
         </div>
 
         <button class="toggle-autoplay">Stop Autoplay</button>
