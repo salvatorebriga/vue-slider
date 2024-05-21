@@ -18,6 +18,9 @@
             v-show="index === currentIndex"
           >
             <img :src="item.image" :alt="item.title" />
+
+            <h2>{{item.title}}</h2>
+            <p>{{item.text}}</p>
           </div>
         </div>
         <div class="thumbs">
@@ -26,6 +29,7 @@
             v-for="(thumb,index) in images"
             :key="index"
             @click="thumbClick(index)"
+            :class="{active: isActive(index)}"
           >
             <img :src="thumb.image" :alt="thumb.title" />
           </div>

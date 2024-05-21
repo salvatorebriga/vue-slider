@@ -32,6 +32,7 @@
   top: 10px;
   color: rgb(255, 255, 255);
   width: 45%;
+  z-index: 2;
 }
 
 .item > p {
@@ -40,6 +41,7 @@
   bottom: 50px;
   color: rgb(255, 255, 255);
   width: 80%;
+  z-index: 2;
 }
 
 .item img {
@@ -122,4 +124,8 @@
   bottom: 35%;
   left: 50%;
   transform: translate(-50%) rotate(135deg);
+}
+
+.active {
+  border: 2px solid white;
 }
