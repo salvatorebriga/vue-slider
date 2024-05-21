@@ -16,6 +16,8 @@
             v-for="(item,index) in images"
             :key="index"
             v-show="index === currentIndex"
+            @mouseover="stopAutoPlay"
+            @mouseleave="autoPlay"
           >
             <img :src="item.image" :alt="item.title" />
 
@@ -37,9 +39,6 @@
           <div class="prev" @click="prevClick"></div>
           <div class="next" @click="nextClick"></div>
         </div>
-
-        <button class="toggle-autoplay">Stop Autoplay</button>
-        <button class="reverse-autoplay">Reverse Autoplay</button>
       </div>
     </div>
 

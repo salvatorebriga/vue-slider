@@ -32,6 +32,7 @@ createApp({
         },
       ],
       currentIndex: 0,
+      interval: null,
     };
   },
 
@@ -60,5 +61,20 @@ createApp({
     isActive(index) {
       return index === this.currentIndex;
     },
+
+    autoPlay() {
+      this.interval = setInterval(() => {
+        this.nextClick();
+      }, 3000);
+    },
+
+    stopAutoPlay() {
+      clearInterval(this.interval);
+      this.interval = null;
+    },
+  },
+
+  mounted() {
+    this.autoPlay();
   },
 }).mount("#app");
